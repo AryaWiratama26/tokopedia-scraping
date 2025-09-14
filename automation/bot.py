@@ -1,0 +1,2 @@
+class TokopediaScraping:
+    pass
