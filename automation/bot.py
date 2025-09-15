@@ -42,3 +42,16 @@ class TokopediaScraping:
         
         except Exception as e:
             print(f"Error search {e}")
+            
+    def get_price(self):
+        try:
+            
+            data_harga = WebDriverWait(DRIVER, 20).until(
+                EC.presence_of_all_elements_located((By.XPATH, "//div[contains(text(),'Rp')]"))
+            )
+            
+            for i in data_harga[:10]:
+                print(i.text)
+        
+        except Exception as e:
+            print(f"error get price {e}")
