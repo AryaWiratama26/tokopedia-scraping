@@ -52,6 +52,9 @@ class TokopediaScraping:
             
             for i in data_harga[:data_len]:
                 print(i.text)
+            
+            time.sleep(1*data_len)
         
+
         except Exception as e:
             print(f"error get price {e}")
