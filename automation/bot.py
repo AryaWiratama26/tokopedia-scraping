@@ -58,3 +58,19 @@ class TokopediaScraping:
 
         except Exception as e:
             print(f"error get price {e}")
+            
+    def get_shop_name(self):
+        
+        try:
+            
+            data_toko = WebDriverWait(DRIVER, 20).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, "span[class^='si3CNdiG8AR0EaXvf6bFbQ==']"))
+            )
+            
+            for i in data_toko[:10]:
+                print(i.text)
+            
+            time.sleep(10)
+        
+        except Exception as e:
+            print(f"error shop name {e}")
